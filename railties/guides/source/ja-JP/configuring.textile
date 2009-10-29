@@ -1,9 +1,9 @@
-h2. Configuring Rails Applications
+h2. Rails アプリケーションの設定
 
-This guide covers the configuration and initialization features available to Rails applications. By referring to this guide, you will be able to:
+このガイドでは、Railsアプリケーションに利用できる、設定と初期化について説明します。このガイドを読むことで、以下のことが行えるようになります:
 
-* Adjust the behavior of your Rails applications
-* Add additional code to be run at application start time
+* Railsアプリケーションの動作を調整できる
+* アプリケーションの起動時に、追加のコードを実行させる
 
 endprologue.
 
