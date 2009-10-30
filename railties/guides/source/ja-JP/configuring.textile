@@ -267,19 +267,19 @@ end
 
 WARNING: Some parts of your application, notably observers and routing, are not yet set up at the point where the +after_initialize+ block is called.
 
-h3. Rails Environment Settings
+h3. Railsの環境設定
 
-Some parts of Rails can also be configured externally by supplying environment variables. The following environment variables are recognized by various parts of Rails:
+Railsは環境変数を指定することで外面的に動作を変更することもできます。次に挙げる環境変数は、Railsの各部分で解釈されます:
 
-* +ENV['RAILS_ENV']+ defines the Rails environment (production, development, test, and so on) that Rails will run under.
+* +ENV['RAILS_ENV']+ はRailsの動作環境(production, development, testなど)を定義します。
 
-* +ENV['RAILS_RELATIVE_URL_ROOT']+ is used by the routing code to recognize URLs when you deploy your application to a subdirectory.
+* +ENV['RAILS_RELATIVE_URL_ROOT']+ はアプリケーションをサブディレクトリにデプロイした際、ルーチングに利用されます。
 
-* +ENV["RAILS_ASSET_ID"]+ will override the default cache-busting timestamps that Rails generates for downloadable assets.
+* +ENV["RAILS_ASSET_ID"]+ は、ブラウザキャッシュを破棄するためにRailsが使用している、デフォルトのタイムスタンプを上書きします。
 
-* +ENV["RAILS_CACHE_ID"]+ and +ENV["RAILS_APP_VERSION"]+ are used to generate expanded cache keys in Rails' caching code. This allows you to have multiple separate caches from the same application.
+* +ENV["RAILS_CACHE_ID"]+ と +ENV["RAILS_APP_VERSION"]+ は、Railsがキャッシュに利用するキーの拡張に用いられます。これにより、キャッシュIDやアプリケーションのバージョンが異なるキャッシュを一つのアプリケーションの中で別々に保持することが可能になります。
 
-* +ENV['RAILS_GEM_VERSION']+ defines the version of the Rails gems to use, if +RAILS_GEM_VERSION+ is not defined in your +environment.rb+ file.
+* +ENV['RAILS_GEM_VERSION']+ は使用するRailsのGemのバージョンを定義します。 +environment.rb+ の中で +RAILS_GEM_VERSION+ が明示されていない場合に指定します。
 
 h3. Changelog
 
