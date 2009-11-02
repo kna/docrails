@@ -17,9 +17,9 @@ Railsでは初期化用コードを(少なくとも)5カ所で記述できるよ
 * Initializers (load_application_initializers)
 * After-Initializers
 
-h3. Using a Preinitializer
+h3. Preinitializerの利用
 
-Rails allows you to use a preinitializer to run code before the framework itself is loaded. If you save code in +RAILS_ROOT/config/preinitializer.rb+, that code will be the first thing loaded, before any of the framework components (Active Record, Action Pack, and so on.) If you want to change the behavior of one of the classes that is used in the initialization process, you can do so in this file.
+Railsでは、preinitializerという機能があります。これは、Active RecordやAction Packなどのフレームワークの読み込みの前に実行される初期化です。実行したいコードを+RAILS_ROOT/config/preinitializer.rb+というファイルで作成します。こうするとサービスの起動時に真っ先にこのファイルがロードされ、その後、Railsのフレームワークが読み込まれます。初期化プロセスの中で使用するクラスの振る舞いを変更することも、このファイルに記述することで実現できます。
 
 h3. Configuring Rails Components
 
