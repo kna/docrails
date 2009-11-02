@@ -7,13 +7,13 @@ h2. Rails アプリケーションの設定
 
 endprologue.
 
-h3. Locations for Initialization Code
+h3. 初期化用コードの記述箇所
 
-Rails offers (at least) five good spots to place initialization code:
+Railsでは初期化用コードを(少なくとも)5カ所で記述できるようになっています:
 
 * Preinitializers
 * environment.rb
-* Environment-specific Configuration Files
+* 環境固有の設定ファイル
 * Initializers (load_application_initializers)
 * After-Initializers
 
