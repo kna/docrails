@@ -21,21 +21,21 @@ h3. Preinitializerの利用
 
 Railsでは、preinitializerという機能があります。これは、Active RecordやAction Packなどのフレームワークの読み込みの前に実行される初期化です。実行したいコードを+RAILS_ROOT/config/preinitializer.rb+というファイルで作成します。こうするとサービスの起動時に真っ先にこのファイルがロードされ、その後、Railsのフレームワークが読み込まれます。初期化プロセスの中で使用するクラスの振る舞いを変更することも、このファイルに記述することで実現できます。
 
-h3. Configuring Rails Components
+h3. Railsコンポーネントの設定
 
-In general, the work of configuring Rails means configuring the components of Rails, as well as configuring Rails itself. The +environment.rb+ and environment-specific configuration files (such as +config/environments/production.rb+) allow you to specify the various settings that you want to pass down to all of the components. For example, the default Rails 2.3 +environment.rb+ file includes one setting:
+Railsの設定は、Rails本体だけでなく、各コンポーネントに対しても行います。+environment.rb+や環境特化設定ファイル(+config/environments/production.rb+ など)では、各コンポーネントの設定をいろいろと行うことができます。例えば、Rails 2.3におけるデフォルトの +environment.rb+ には以下のような記述があります:
 
 <ruby>
 config.time_zone = 'UTC'
 </ruby>
 
-This is a setting for Rails itself. If you want to pass settings to individual Rails components, you can do so via the same +config+ object:
+これはRailsそのものに対する設定ですが、+config+ オブジェクトを介する事で個々のコンポーネントの設定も記述可能です:
 
 <ruby>
 config.active_record.colorize_logging = false
 </ruby>
 
-Rails will use that particular setting to configure Active Record.
+この記述は、Active Recordの設定に利用されます。
 
 h4. Rails General Configuration
 
