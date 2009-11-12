@@ -87,11 +87,11 @@ h4. Rails の一般的な設定
 
 * +config.whiny_nils+ は nil のメソッドが実行されたときに警告を出すかどうかをを指定します。デフォルトでは _false_ です。
 
-h4. Configuring i18n
+h4. i18n の設定
 
-* +config.i18n.default_locale+ sets the default locale of an application used for i18n. Defaults to +:en+.
+* +config.i18n.default_locale+ には、デフォルトの i18n のロケール(地域)を指定します。デフォルトでは、 +:en+ です。
 
-* +config.i18n.load_path+ sets the path Rails uses to look for locale files. Defaults to +config/locales/*.{yml,rb}+
+* +config.i18n.load_path+ には、ロケール用ファイルのパスを指定します。デフォルトでは +config/locales/*.{yml,rb}+ です。
 
 h4. Configuring Active Record
 
