@@ -37,55 +37,55 @@ config.active_record.colorize_logging = false
 
 この記述は、Active Recordの設定に利用されます。
 
-h4. Rails General Configuration
+h4. Rails の一般的な設定
 
-* +config.routes_configuration_file+ overrides the default path for the routes configuration file. This defaults to +config/routes.rb+.
+* +config.routes_configuration_file+ にはルーチング設定ファイルのデフォルトパスを設定します。デフォルトは +config/routes.rb.rb+ です。
 
-* +config.cache_classes+ controls whether or not application classes should be reloaded on each request.
+* +config.cache_classes+ にはアプリケーションのクラスをリクエスト毎にリロードするかどうかを設定します。
 
-* +config.cache_store+ configures which cache store to use for Rails caching. Options include +:memory_store+, +:file_store+, +:mem_cache_store+ or the name of your own custom class.
+* +config.cache_store+ にはキャッシュの保存方法を指定します。+:memory_store+、 +:file_store+、 +:mem_cache_store+、ユーザ定義のクラス名が選択可能です。
 
-* +config.controller_paths+ accepts an array of paths that will be searched for controllers. Defaults to +app/controllers+.
+* +config.controller_paths+ では、コントローラとして探索対象となるパスを配列で指定します。デフォルトは +app/controllers+ です。
 
-* +config.database_configuration_file+ overrides the default path for the database configuration file. Default to +config/database.yml+.
+* +config.database_configuration_file+ では、データベースの設定ファイルのデフォルトパスを指定します。デフォルトは +config/database.yml+ です。
 
-* +config.dependency_loading+ enables or disables dependency loading during the request cycle. Setting dependency_loading to _true_ will allow new classes to be loaded during a request and setting it to _false_ will disable this behavior.
+* +config.dependency_loading+ では dependency loading の有効/無効を指定します。_true_ にした場合、リクエストの度に新しいクラスのロードを行います。_false_ にした場合、このような動作を行いません。
 
-* +config.eager_load_paths+ accepts an array of paths from which Rails will eager load on boot if cache classes is enabled. All elements of this array must also be in +load_paths+. 
+* +config.eager_load_paths+ では、ブート時にeager loadするパスを配列で指定します。これには、cache classesが有効であり、かつ、この配列中のパスが全て +load_paths+ の中にも含まれている必要があります。
 
-* +config.frameworks+ accepts an array of rails framework components that should be loaded. (Defaults to +:active_record+, +:action_controller+, +:action_view+, +:action_mailer+, and +:active_resource+). 
+* +config.frameworks+ では、Railsのコンポーネントのうち、読み込むものを配列で指定します(デフォルトでは +:active_record+、 +:action_controller+、 +:action_view+、 +:action_mailer+、 +:active_resource+)。 
 
-* +config.load_once_paths+ accepts an array of paths from which Rails will automatically load from only once. All elements of this array must also be in +load_paths+.
+* +config.load_once_paths+ には、Railsが自動ロードを一度だけ行うパスを配列で指定できます。この配列中のパスは、+load_paths+ の中にも含まれている必要があります。
 
-* +config.load_paths+ accepts an array of additional paths to prepend to the load path. By default, all app, lib, vendor and mock paths are included in this list. 
+* +config.load_paths+ では、Railsが読み込むパスを配列で指定できます。デフォルトでは、すべてのapp、lib、vendor、 mock のパスがリストに含まれています。
 
-* +config.log_level+ defines the verbosity of the Rails logger. In production mode, this defaults to +:info+. In development mode, it defaults to +:debug+. 
+* +config.log_level+ ではRailsのログ機能の詳細さを指定します。デフォルト値は、production モードでは +:info+ 、development モードでは +:debug+ です。 
 
-* +config.log_path+ overrides the path to the log file to use. Defaults to +log/#{environment}.log+ (e.g. log/development.log or log/production.log). 
+* +config.log_path+ はログファイルの保存場所を指定します。デフォルトでは +log/#{environment}.log+ が使用されます(例. log/development.log や log/production.log など)。 
 
-* +config.logger+ accepts a logger conforming to the interface of Log4r or the default Ruby 1.8+ Logger class, which is then used to log information from Action Controller. Set to nil to disable logging.
+* +config.logger+ では、ログ機能を Log4r か Ruby 1.8+ の Logger クラスのインタフェースに合わせることができます。これらはAction Controllerの情報のログを取るときに使用されます。nil を指定した場合、ログ機能は無効になります。
 
-* +config.metals+ accepts an array used as the metals to load. If this is set to nil, all metals will be loaded in alphabetical order. If this is set to [], no metals will be loaded. Otherwise metals will be loaded in the order specified 
+* +config.metals+ はロードする metal を配列で指定します。nil がセットされた場合、全 metal がアルファベット順にロードされます。[] がセットされた場合、metal は読み込まれません。これ以外の場合、指定された順番通りにロードされます。
 
-* +config.plugin_loader+ overrides the class that handles loading each plugin. Defaults to +Rails::Plugin::Loader+.
+* +config.plugin_loader+ は、各プラグインのロードを管理するクラスを指定します。デフォルトは +Rails::Plugin::Loader+ です。
 
-* +config.plugin_locators+ overrides the class that handle finding the desired plugins that you‘d like to load for your application. By default it is the +Rails::Plugin::FileSystemLocator+.
+* +config.plugin_locators+ は、アプリケーションにロードするプラグインを探すクラスを指定します。デフォルトでは +Rails::Plugin::FileSystemLocator+ です。
 
-* +config.plugin_paths+ overrides the path to the root of the plugins directory. Defaults to +vendor/plugins+.
+* +config.plugin_paths+ はプラグインのディレクトリのルートパスを指定します。デフォルトは +vendor/plugins+ です。
 
-* +config.plugins+ accepts the list of plugins to load. If this is set to nil, all plugins will be loaded. If this is set to [], no plugins will be loaded. Otherwise, plugins will be loaded in the order specified.
+* +config.plugins+ は読み込むプラグインのリストを指定します。nilがセットされた場合、全プラグインがロードされます。[]がセットされた場合、プラグインは読み込まれません。これ以外の場合、指定された順番通りにプラグインがロードされます。
 
-* +config.preload_frameworks+ enables or disables preloading all frameworks at startup.
+* +config.preload_frameworks+ は起動時に全てのフレームワークをロードするかどうかを指定します。
 
-* +config.reload_plugins+ enables or disables plugin reloading. 
+* +config.reload_plugins+ はプラグインの再読み込みを行うかどうかを指定します。
 
-* +config.root_path+ configures the root path of the application.
+* +config.root_path+ はアプリケーションのルートパスを設定します。
 
-* +config.time_zone+ sets the default time zone for the application and enables time zone awareness for Active Record.
+* +config.time_zone+ には、アプリケーションのデフォルトのタイムゾーンを指定します。この情報は Active Record からも参照されます。
 
-* +config.view_path+ sets the path of the root of an application's views. Defaults to +app/views+.
+* +config.view_path+ には、アプリケーションのビューのルートパスを指定します。デフォルトは +app/views+ です。
 
-* +config.whiny_nils+ enables or disabled warnings when an methods of nil are invoked. Defaults to _false_.
+* +config.whiny_nils+ は nil のメソッドが実行されたときに警告を出すかどうかをを指定します。デフォルトでは _false_ です。
 
 h4. Configuring i18n
 
