@@ -94,26 +94,6 @@ def html_options_for_form(url_for_options, options, *parameters_for_url)
 end
 </ruby>
 
-See also "+Object#tap+":#tap.
-
-h4. +tap+
-
-+Object#tap+ exists in Ruby 1.8.7 and 1.9, and it is defined by Active Support for previous versions. This method yields its receiver to a block and returns it.
-
-For example, the following class method from +ActionDispatch::TestResponse+ creates, initializes, and returns a new test response using +tap+:
-
-<ruby>
-def self.from_response(response)
-  new.tap do |resp|
-    resp.status  = response.status
-    resp.headers = response.headers
-    resp.body    = response.body
-  end
-end
-</ruby>
-
-See also "+Object#returning+":#returning.
-
 h4. +try+
 
 Sometimes you want to call a method provided the receiver object is not +nil+, which is something you usually check first.
@@ -316,32 +296,6 @@ TIP: Since +with_options+ forwards calls to its receiver they can be nested. Eac
 h4. Instance Variables
 
 Active Support provides several methods to ease access to instance variables.
-
-h5. +instance_variable_defined?+
-
-The method +instance_variable_defined?+ exists in Ruby 1.8.6 and later, and it is defined for previous versions anyway:
-
-<ruby>
-class C
-  def initialize
-    @a = 1
-  end
-
-  def m
-    @b = 2
-  end
-end
-
-c = C.new
-
-c.instance_variable_defined?("@a") # => true
-c.instance_variable_defined?(:@a)  # => true
-c.instance_variable_defined?("a")  # => NameError: `a' is not allowed as an instance variable name
-
-c.instance_variable_defined?("@b") # => false
-c.m
-c.instance_variable_defined?("@b") # => true
-</ruby>
 
 h5. +instance_variable_names+
 
@@ -657,31 +611,7 @@ C                   # => NameError: uninitialized constant C
 
 See also +Object#remove_subclasses_of+ in "Extensions to All Objects FIX THIS LINK":FIXME.
 
-h3. Extensions to +Symbol+
-
-h4. +to_proc+
-
-The method +to_proc+ turns a symbol into a Proc object so that for example
-
-<ruby>
-emails = users.map {|u| u.email}
-</ruby>
-
-can be written as
-
-<ruby>
-emails = users.map(&:email)
-</ruby>
-
-TIP: If the method that receives the Proc yields more than one value to it the rest are considered to be arguments of the method call.
-
-Symbols from Ruby 1.8.7 on respond to +to_proc+, and Active Support defines it for previous versions.
-
 h3. Extensions to +String+
-
-h4. +bytesize+
-
-Ruby 1.9 introduces +String#bytesize+ to obtain the length of a string in bytes. Ruby 1.8.7 defines this method as an alias for +String#size+ for forward compatibility, and Active Support does so for previous versions.
 
 h4. +squish+
 
@@ -705,37 +635,13 @@ In Ruby 1.9 the <tt>%</tt> string operator supports key-based interpolation, bot
 
 Active Support adds that functionality to <tt>%</tt> in previous versions of Ruby.
 
-h4. +start_with?+ and +end_width?+
+h4. +starts_with?+ and +ends_width?+
 
-Ruby 1.8.7 and up define the predicates +String#start_with?+ and +String#end_with?+:
-
-<ruby>
-"foo".start_with?("f") # => true
-"foo".start_with?("g") # => false
-"foo".start_with?("")  # => true
-
-"foo".end_with?("o")   # => true
-"foo".end_with?("p")   # => false
-"foo".end_with?("")    # => true
-</ruby>
-
-If strings do not respond to those methods Active Support emulates them, and also defines their 3rd person aliases:
+Active Support defines 3rd person aliases of +String#start_with?+ and +String#end_with?+:
 
 <ruby>
 "foo".starts_with?("f") # => true
 "foo".ends_with?("o")   # => true
-</ruby>
-
-in case you feel more comfortable spelling them that way.
-
-WARNING. Active Support invokes +to_s+ on the argument, but Ruby does not. Since Active Support defines these methods only if strings do not respond to them, this corner of their behaviour depends on the interpreter that runs a given Rails application. You change the interpreter, and +start_with?(1)+ may change its return value. In consequence, it's more portable not to rely on that and pass always strings.
-
-h4. +each_char+
-
-Ruby 1.8.7 and up define the iterator +String#each_char+ that understands UTF8 and yields strings with a single character each, so they have length 1 but may be multibyte. Active Support defines that method for previous versions of Ruby:
-
-<ruby>
-"\xE6\x97\xA5\xE6\x9C\xAC\xE8\xAA\x9E".each_char {|c| print c} # => 日本語
 </ruby>
 
 h4. Access
@@ -824,19 +730,6 @@ The method +multiple_of?+ tests whether an integer is multiple of the argument:
 </ruby>
 
 WARNING: Due the way it is implemented the argument must be nonzero, otherwise +ZeroDivisionError+ is raised.
-
-h4. +even?+ and +odd?+
-
-Integers in Ruby 1.8.7 and above respond to +even?+ and +odd?+, Active Support defines them for older versions:
-
-<ruby>
--1.even?  # => false
--1.odd?   # => true
- 0.even?  # => true
- 0.odd?   # => false
- 2.even?  # => true
- 2.odd?   # => false
-</ruby>
 
 h4. +ordinalize+
 
@@ -970,16 +863,6 @@ If an optional block is given +many?+ only takes into account those elements tha
 <ruby>
 @see_more = videos.many? {|video| video.category == params[:category]}
 </ruby>
-
-h4. +none?+
-
-The method +none?+ is the negation of +any?+. It yields elements to a block and returns true if none of them matches:
-
-<ruby>
-success = responses.none? {|r| r.status / 100 == 5}
-</ruby>
-
-Ruby 1.8.7 and later already have +none?+, Active Support defines it for previous versions.
 
 h3. Extensions to +Array+
 
