@@ -93,39 +93,39 @@ h4. i18n の設定
 
 * +config.i18n.load_path+ には、ロケール用ファイルのパスを指定します。デフォルトでは +config/locales/*.{yml,rb}+ です。
 
-h4. Configuring Active Record
+h4. Active Record の設定
 
-<tt>config.active_record</tt> includes a variety of configuration options:
+<tt>config.active_record</tt> からは様々な設定が可能です:
 
-* +config.active_record.logger+ accepts a logger conforming to the interface of Log4r or the default Ruby 1.8.x Logger class, which is then passed on to any new database connections made. You can retrieve this logger by calling +logger+ on either an Active Record model class or an Active Record model instance. Set to nil to disable logging.
+* +config.active_record.logger+ では、ログ機能を Log4r か　Ruby 1.8.x の Logger クラスのインタフェースに合わせることができます。データベースのコネクションが新しく作られるたびに、この情報は参照されます。このロガーは、Active Record のクラスとインスタンスの両方から、+logger+ によって参照できます。nil を指定した場合は、ログ機能を無効にします。
 
-* +config.active_record.primary_key_prefix_type+ lets you adjust the naming for primary key columns. By default, Rails assumes that primary key columns are named +id+ (and this configuration option doesn't need to be set.) There are two other choices:
-** +:table_name+ would make the primary key for the Customer class +customerid+
-** +:table_name_with_underscore+ would make the primary key for the Customer class +customer_id+
+* +config.active_record.primary_key_prefix_type+ は、主キー(の列名)の名前の付け方を変更できます。デフォルトでは、 +id+ という名前です(そのため、この設定項目は必須ではありません)。他に2つの選択肢があります:
+** +:table_name+ では、Customer クラスの主キーは +customerid+ になります。
+** +:table_name_with_underscore+ では、Customer クラスの主キーは +customer_id+ になります。
 
-* +config.active_record.table_name_prefix+ lets you set a global string to be prepended to table names. If you set this to +northwest_+, then the Customer class will look for +northwest_customers+ as its table. The default is an empty string.
+* +config.active_record.table_name_prefix+ は、テーブル名の先頭につけるグローバルな文字列を指定することができます。例えば +northwest_+ という文字列を設定した場合、Customer クラスのテーブルは +northwest_customers+ であると期待されます。デフォルト値は空文字です。
 
-* +config.active_record.table_name_suffix+ lets you set a global string to be appended to table names. If you set this to +_northwest+, then the Customer class will look for +customers_northwest+ as its table. The default is an empty string.
+* +config.active_record.table_name_suffix+ は、テーブル名の後ろにつけるグローバルな文字列を指定することができます。例えば +_northwest+ という文字列を設定した場合、Customer クラスのテーブルは +customers_northwest+ であると期待されます。デフォルト値は空文字です。
 
-* +config.active_record.pluralize_table_names+ specifies whether Rails will look for singular or plural table names in the database. If set to +true+ (the default), then the Customer class will use the +customers+ table. If set to +false+, then the Customers class will use the +customer+ table.
+* +config.active_record.pluralize_table_names+ は、Railsがデータベース中からテーブルを探すときに、単数形もしくは複数形のどちらで探すかを指定します。+true+ をセットした場合(これがデフォルトです)、Customer クラスのテーブル名は +customers+ になります。+false+ をセットした場合、Customer クラスのテーブル名は +customer+になります。
 
-* +config.active_record.colorize_logging+ (true by default) specifies whether or not to use ANSI color codes when logging information from ActiveRecord.
+* +config.active_record.colorize_logging+ (デフォルトではtrue)はActive Recordの情報をログをとるとき、ANSIカラーコードを利用するかどうかを指定します。
 
-* +config.active_record.default_timezone+ determines whether to use +Time.local+ (if set to +:local+) or +Time.utc+ (if set to +:utc+) when pulling dates and times from the database. The default is +:local+.
+* +config.active_record.default_timezone+ は +Time.local+ (+:local+ を指定した場合) か +Time.utc+ (+:utc+ を指定した場合) を選択します。これは、データベースから日付や時刻を取得するときに使用されます。デフォルトで +:local+ です。
 
-* +config.active_record.schema_format+ controls the format for dumping the database schema to a file. The options are +:ruby+ (the default) for a database-independent version that depends on migrations, or +:sql+ for a set of (potentially database-dependent) SQL statements.
+* +config.active_record.schema_format+ は、データベーススキーマのダンプファイルの書式を指定します。選択肢は2つです。+:ruby+ (デフォルト) はマイグレーションに依存するデータベース独立のバージョンです。+:sql+ は(潜在的にデータベース依存の) SQL 文の組み合わせです。
 
-* +config.active_record.timestamped_migrations+ controls whether migrations are numbered with serial integers or with timestamps. The default is +true+, to use timestamps, which are preferred if there are multiple developers working on the same application.
+* +config.active_record.timestamped_migrations+ は、マイグレーションファイルのナンバリングを、連番にするかタイムスタンプにするかを指定します。デフォルトでは +true+ で、タイムスタンプを使用します。こちらは、同じアプリケーションを複数人で開発するときにおすすめです。
 
-* +config.active_record.lock_optimistically+ controls whether ActiveRecord will use optimistic locking. By default this is +true+.
+* +config.active_record.lock_optimistically+ は Active Record のロックを楽観的ロックにするかどうかを選択します。デフォルトでは +true+ です。
 
-The MySQL adapter adds one additional configuration option:
+MySQL アダプタには、追加の設定項目を一つ指定できます:
 
-* +ActiveRecord::ConnectionAdapters::MysqlAdapter.emulate_booleans+ controls whether ActiveRecord will consider all +tinyint(1)+ columns in a MySQL database to be booleans. By default this is +true+.
+* +ActiveRecord::ConnectionAdapters::MysqlAdapter.emulate_booleans+ は、Active Record が MySQLデータベース中の +tinyint(1)+ のカラムを全てブール値と見なすかどうかを指定します。デフォルトでは +true+ です。
 
-The schema dumper adds one additional configuration option:
+スキーマダンプにも、追加の設定項目を一つ設定できます:
 
-* +ActiveRecord::SchemaDumper.ignore_tables+ accepts an array of tables that should _not_ be included in any generated schema file. This setting is ignored unless +config.active_record.schema_format == :ruby+.
+* +ActiveRecord::SchemaDumper.ignore_tables+ には、スキーマのファイルに加えたくないテーブル名を、配列で指定します。この設定は +config.active_record.schema_format == :ruby+ 以外の場合は無視されます。
 
 h4. Configuring Action Controller
 
