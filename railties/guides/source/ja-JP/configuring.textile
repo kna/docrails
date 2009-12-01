@@ -127,31 +127,31 @@ MySQL アダプタには、追加の設定項目を一つ指定できます:
 
 * +ActiveRecord::SchemaDumper.ignore_tables+ には、スキーマのファイルに加えたくないテーブル名を、配列で指定します。この設定は +config.active_record.schema_format == :ruby+ 以外の場合は無視されます。
 
-h4. Configuring Action Controller
+h4. Action Controller の設定
 
-<tt>config.action_controller</tt> includes a number of configuration settings:
+<tt>config.action_controller</tt> には多くの設定項目があります:
 
-* +config.action_controller.asset_host+ provides a string that is prepended to all of the URL-generating helpers in +AssetHelper+. This is designed to allow moving all javascript, CSS, and image files to a separate asset host.
+* +config.action_controller.asset_host+ provides a string that is prepended to all of the URL-generating helpers in +AssetHelper+. これにより、javascript、CSS、画像のファイルを外部のasset hostに配置することが可能になります。
 
-* +config.action_controller.consider_all_requests_local+ is generally set to +true+ during development and +false+ during production; if it is set to +true+, then any error will cause detailed debugging information to be dumped in the HTTP response. For finer-grained control, set this to +false+ and implement +local_request?+ to specify which requests should provide debugging information on errors.
+* +config.action_controller.consider_all_requests_local+ は通常、developmentの場合では +true+ 、productionの場合では +false+ になっています; この値を +true+ にした場合、エラー時には詳細なデバッグ情報をHTTPリクエストとして返します。細かく制御するには、この値を +false+ にし、詳細なデバッグ情報を出力したいコントローラに+local_request?+ メソッドを実装してください。
 
 * +config.action_controller.allow_concurrency+ should be set to +true+ to allow concurrent (threadsafe) action processing. Set to +false+ by default. You probably don't want to call this one directly, though, because a series of other adjustments need to be made for threadsafe mode to work properly. Instead, you should simply call +config.threadsafe!+ inside your +production.rb+ file, which makes all the necessary adjustments.
 
 WARNING: Threadsafe operation in incompatible with the normal workings of development mode Rails. In particular, automatic dependency loading and class reloading are automatically disabled when you call +config.threadsafe!+.
 
-* +config.action_controller.param_parsers+ provides an array of handlers that can extract information from incoming HTTP requests and add it to the +params+ hash. By default, parsers for multipart forms, URL-encoded forms, XML, and JSON are active.
+* +config.action_controller.param_parsers+ は、HTTPリクエストから情報を抽出して +params+ ハッシュに格納するパーサーを配列で指定します。デフォルトでは、マルチパート・フォーム、URL-エンコード・フォーム、XML、JSONのパーサーが有効になっています。
 
-* +config.action_controller.default_charset+ specifies the default character set for all renders. The default is "utf-8".
+* +config.action_controller.default_charset+ は、レンダーのデフォルトの文字セットを指定します。デフォルトは "utf-8" です。
 
-* +config.action_controller.logger+ accepts a logger conforming to the interface of Log4r or the default Ruby 1.8+ Logger class, which is then used to log information from Action Controller. Set to nil to disable logging.
+* +config.action_controller.logger+ は、ログ機能を Log4r か Ruby 1.8+ のLogger クラスのインタフェースに合わせることができます。このロガーはAction Controllerがログを記録する際に使用されます。nil を指定した場合は、ログ機能を無効にします。
 
-* +config.action_controller.resource_action_separator+ gives the token to be used between resources and actions when building or interpreting RESTful URLs. By default, this is "/".
+* +config.action_controller.resource_action_separator+ は、リソースとアクションの分割文字を指定します。これはRESTfulなURLの生成や解釈に用いられます。デフォルトでは "/" です。
 
-* +config.action_controller.resource_path_names+ is a hash of default names for several RESTful actions. By default, the new action is named +new+ and the edit action is named +edit+.
+* +config.action_controller.resource_path_names+ は、一部のRESTfulなアクションのデフォルト名をハッシュで指定します。デフォルトでは、new アクションは +new+、edit アクションは +edit+ になっています。
 
-* +config.action_controller.request_forgery_protection_token+ sets the token parameter name for RequestForgery. Calling +protect_from_forgery+ sets it to +:authenticity_token+ by default.
+* +config.action_controller.request_forgery_protection_token+ は、リクエスト偽造(RequestForgery)対策に使用するトークンパラメータの名前を指定します。+protect_from_forgery+ を呼び出す際、デフォルトでは +:authenticity_token+ が使用されます。
 
-* +config.action_controller.optimise_named_routes+ turns on some optimizations in generating the routing table. It is set to +true+ by default.
+* +config.action_controller.optimise_named_routes+ は、ルーチングテーブルの生成の最適機構をオンにします。デフォルトでは +true+ です。
 
 * +config.action_controller.use_accept_header+ sets the rules for determining the response format. If this is set to +true+ (the default) then +respond_to+ and +Request#format+ will take the Accept header into account. If it is set to false then the request format will be determined solely by examining +params[:format]+. If there is no +format+ parameter, then the response format will be either HTML or Javascript depending on whether the request is an AJAX request.
 
@@ -167,13 +167,13 @@ The caching code adds two additional settings:
 
 * +ActionController::Base.page_cache_extension+ sets the extension to be used when generating pages for the cache (this is ignored if the incoming request already has an extension). The default is +.html+.
 
-The Active Record session store can also be configured:
+Active Recordのセッションストアも設定を行えます:
 
-* +ActiveRecord::SessionStore::Session.table_name+ sets the name of the table uses to store sessions. Defaults to +sessions+.
+* +ActiveRecord::SessionStore::Session.table_name+ は、セッションの管理を行うテーブル名を指定します。デフォルトでは、 +sessions+ です。
 
-* +ActiveRecord::SessionStore::Session.primary_key+ sets the name of the ID column uses in the sessions table. Defaults to +session_id+.
+* +ActiveRecord::SessionStore::Session.primary_key+ は、セッション管理テーブルの主キーの名前を指定します。デフォルトでは、 +session_id+ です。
 
-* +ActiveRecord::SessionStore::Session.data_column_name+ sets the name of the column which stores marshaled session data. Defaults to +data+.
+* +ActiveRecord::SessionStore::Session.data_column_name+ は、セッションのマーシャルデータを格納するカラム名を指定します。デフォルトでは +data+ です。
 
 h4. Configuring Action View
 
