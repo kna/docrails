@@ -11,15 +11,15 @@ endprologue.
 
 WARNING. このガイドはRails 2.3に準拠してます。ここに示したコードの一部は他のバージョンでは動作しない場合があります。
 
-h3. This Guide Assumes
+h3. このガイドの前提として
 
-This guide is designed for beginners who want to get started with a Rails application from scratch. It does not assume that you have any prior experience with Rails. However, to get the most out of it, you need to have some prerequisites installed:
+このガイドはRailsアプリケーションを一から作ってみたいと考えている初心者のために書かれています。つまり、既にRailsに関する経験を持っているとは想定していません。しかしながら、下に示したものは事前にインストールしておく必要があります:
 
-* The "Ruby":http://www.ruby-lang.org/en/downloads language
-* The "RubyGems":http://rubyforge.org/frs/?group_id=126 packaging system
-* A working installation of "SQLite":http://www.sqlite.org (preferred), "MySQL":http://www.mysql.com, or "PostgreSQL":http://www.postgresql.org
+* プログラミング言語の "Ruby":http://www.ruby-lang.org/ja/downloads
+* パッケージシステムの "RubyGems":http://rubyforge.org/frs/?group_id=126
+* 動作する "SQLite":http://www.sqlite.org (推奨)か、 "MySQL":http://www.mysql.com 、もしくは "PostgreSQL":http://www.postgresql.org
 
-It is highly recommended that you *familiarize yourself with Ruby before diving into Rails*. You will find it much easier to follow what's going on with a Rails application if you understand basic Ruby syntax. Rails isn't going to magically revolutionize the way you write web applications if you have no experience with the language it uses. There are some good free resources on the internet for learning Ruby, including:
+強くおすすめしたいのは、 *Railsの世界に踏み込む前にRubyと仲良くなっておく* ことです。Rubyの文法を理解していれば、Railsの動作の把握も容易になります。もしRubyでのプログラミング経験が無ければ、Webアプリケーションの開発を魔法のように改善できるRailsの真価もわからないでしょう。インターネット上にはRuby学習用のフリーですばらしい情報源があります。たとえば以下のようなものがあります:
 
 * "Mr. Neighborly's Humble Little Ruby Book":http://www.humblelittlerubybook.com
 * "Programming Ruby":http://www.rubycentral.com/book
