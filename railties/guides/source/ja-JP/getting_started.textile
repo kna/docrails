@@ -25,17 +25,17 @@ h3. このガイドの前提として
 * "Programming Ruby":http://www.rubycentral.com/book
 * "Why's (Poignant) Guide to Ruby":http://mislav.uniqpath.com/poignant-guide/
 
-h3. What is Rails?
+h3. Railsとは?
 
-Rails is a web development framework written in the Ruby language. It is designed to make programming web applications easier by making assumptions about what every developer needs to get started. It allows you to write less code while accomplishing more than many other languages and frameworks. Longtime Rails developers also report that it makes web application development more fun.
+RailsはRuby製のWeb開発フレームワークです。Railsでは、全てのWebアプリケーション開発者が取り組む必要のあることに、いくつかの約束ごとを決めることで開発を容易にするように設計されています。Railsを使うことで今までより少ないコードで他の言語やフレームワークよりも多くのことを実現できます。長年Railsを使っている開発者は、Webアプリケーションの開発が今までよりも楽しくなったとも言っています。
 
-Rails is opinionated software. That is, it assumes that there is a best way to do things, and it's designed to encourage that best way - and in some cases to discourage alternatives. If you learn "The Rails Way" you'll probably discover a tremendous increase in productivity. If you persist in bringing old habits from other languages to your Rails development, and trying to use patterns you learned elsewhere, you may have a less happy experience.
+Railsは頑固なソフトウェアです。つまり、何をするにも最善の方法があると見なして、その最善の方法を取ることを推奨しています - それはまた、別の方法をとりにくくしているという事でもあります。もしあなたが"Railsのやり方(The Rails Way)"を学べば、生産性をぐっと向上させる事ができるでしょう。しかし、あなたが他の言語の古いやり方をRails開発に持ち込んだりどこかで学んだパターンを使ったりしてしまうと、楽しい体験は減ってしまうかもしれません。
 
-The Rails philosophy includes several guiding principles:
+Railsの哲学には、いくつかの指針となる原則があります:
 
-* DRY - "Don't Repeat Yourself" - suggests that writing the same code over and over again is a bad thing.
-* Convention Over Configuration - means that Rails makes assumptions about what you want to do and how you're going to do it, rather than letting you tweak every little thing through endless configuration files.
-* REST is the best pattern for web applications - organizing your application around resources and standard HTTP verbs is the fastest way to go.
+* DRY - "Don't Repeat Yourself" - 同じコードを何度も書くのは悪いことです。
+* 設定よりも規約(Convention Over Configuration) - 実現したいことや、そのための手法をあらかじめ約束事としています。ちょっとしたことのためにいくつもの設定ファイルを延々といじくり回すといったことはしません。
+* RESTはWebアプリケーションにおける最善の方法である - リソースと標準的なHTTPメソッドを基礎にしてアプリケーションを構成することが最速の手法です。
 
 h4. The MVC Architecture
 
