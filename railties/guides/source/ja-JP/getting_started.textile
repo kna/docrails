@@ -37,25 +37,25 @@ Railsの哲学には、いくつかの指針となる原則があります:
 * 設定よりも規約(Convention Over Configuration) - 実現したいことや、そのための手法をあらかじめ約束事としています。ちょっとしたことのためにいくつもの設定ファイルを延々といじくり回すといったことはしません。
 * RESTはWebアプリケーションにおける最善の方法である - リソースと標準的なHTTPメソッドを基礎にしてアプリケーションを構成することが最速の手法です。
 
-h4. The MVC Architecture
+h4. MVCアーキテクチャー
 
-Rails is organized around the Model, View, Controller architecture, usually just called MVC. MVC benefits include:
+Railsはモデル、ビュー、コントローラーからなるアーキテクチャー(一般にMVCモデルと呼ばれます)で構成されています。MVCモデルの利点には次のようなものがあります:
 
-* Isolation of business logic from the user interface
-* Ease of keeping code DRY
-* Making it clear where different types of code belong for easier maintenance
+* ユーザーインタフェースとビジネスロジックの分離
+* コードをDRYに維持しやすい
+* コードのタイプに応じてファイルの場所を定めているので、メンテナンスが容易
 
-h5. Models
+h5. モデル
 
-A model represents the information (data) of the application and the rules to manipulate that data. In the case of Rails, models are primarily used for managing the rules of interaction with a corresponding database table. In most cases, one table in your database will correspond to one model in your application. The bulk of your application's business logic will be concentrated in the models.
+モデルは、アプリケーションのデータと、そのデータを処理するルールを表現します。Railsでの重要な機能はデータベースとの対話的処理の管理です。多くの場合、データベース内の一つのテーブルが一つのモデルに対応します。また、ビジネスロジックの多くはモデルに集約されます。
 
-h5. Views
+h5. ビュー
 
-Views represent the user interface of your application. In Rails, views are often HTML files with embedded Ruby code that perform tasks related solely to the presentation of the data. Views handle the job of providing data to the web browser or other tool that is used to make requests from your application.
+ビューはアプリケーションのユーザーインタフェースです。Railsでは、Rubyコードを埋め込んだHTMLファイルとして作られます。ここでのRubyコードはもっぱらデータの表示関連に使われます。ビューが管理するのは、アプリケーションに対してリクエストを出してくるWebブラウザなどのツールへのデータ提供です。
 
-h5. Controllers
+h5. コントローラー
 
-Controllers provide the "glue" between models and views. In Rails, controllers are responsible for processing the incoming requests from the web browser, interrogating the models for data, and passing that data on to the views for presentation.
+コントローラーはモデルとビューの"糊"の役目を果たします。Railsでは、Webブラウザからのリクエストを処理し、モデルにデータを問い合わせ、取り出したデータをビューに渡して表示させます。
 
 h4. The Components of Rails
 
