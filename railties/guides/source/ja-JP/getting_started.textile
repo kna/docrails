@@ -57,9 +57,9 @@ h5. コントローラー
 
 コントローラーはモデルとビューの"糊"の役目を果たします。Railsでは、Webブラウザからのリクエストを処理し、モデルにデータを問い合わせ、取り出したデータをビューに渡して表示させます。
 
-h4. The Components of Rails
+h4. Railsの構成
 
-Rails provides a full stack of components for creating web applications, including:
+RailsはWebアプリケーションに必要な以下の要素を全て提供します:
 
 * Action Controller
 * Action View
@@ -71,31 +71,31 @@ Rails provides a full stack of components for creating web applications, includi
 
 h5. Action Controller
 
-Action Controller is the component that manages the controllers in a Rails application. The Action Controller framework processes incoming requests to a Rails application, extracts parameters, and dispatches them to the intended action. Services provided by Action Controller include session management, template rendering, and redirect management.
+Action ControllerはRailsアプリケーションのコントローラーを担当します。アプリケーションにリクエストが投げられたとき、それを処理してパラメータを抽出し、そのデータを対応するアクションに渡します。Action Controllerの機能には、セッション管理やテンプレートの描画、リダイレクトの管理なども含まれます。
 
 h5. Action View
 
-Action View manages the views of your Rails application. It can create both HTML and XML output by default. Action View manages rendering templates, including nested and partial templates, and includes built-in AJAX support.
+Action ViewはRailsアプリケーションのビューを担当します。デフォルトの出力形式はHTMLとXMLです。Action Viewはテンプレートの描画を管理します。これには、入れ子になったテンプレートや部分テンプレートも含みます。また、AJAXのサポート機能もあります。
 
 h5. Active Record
 
-Active Record is the base for the models in a Rails application. It provides database independence, basic CRUD functionality, advanced finding capabilities, and the ability to relate models to one another, among other services.
+Active Recordは、Railsアプリケーションにおけるモデルの土台になるものです。機能としては、データベース独立性や基本的なCRUD機能、高度な検索、モデル間(もしくはモデルと他のサービス間)の関係付けなどがあります。
 
 h5. Action Mailer
 
-Action Mailer is a framework for building e-mail services. You can use Action Mailer to send emails based on flexible templates, or to receive and process incoming email.
+Action Mailerは、Eメールサービスを組み立てるためのフレームワークです。Action Mailerでは、柔軟なテンプレートにあわせてメールを作成して送信したり、メールを受信して処理することができます。
 
 h5. Active Resource
 
-Active Resource provides a framework for managing the connection between business objects and RESTful web services. It implements a way to map web-based resources to local objects with CRUD semantics.
+Active Resourceは、ビジネスオブジェクトとRESTfulなWebサービスの連携を行うフレームワークです。これにより、Web上のリソースとローカルオブジェクトをマッピングし、CRUDの操作を行えるようにします。
 
 h5. Railties
 
-Railties is the core Rails code that builds new Rails applications and glues the various frameworks together in any Rails application.
+RailtiesはRailsの核となるコードです。新しいRailsアプリケーションを作成し、いろいろなフレームワークとRailsアプリケーションを結びつけます。
 
 h5. Active Support
 
-Active Support is an extensive collection of utility classes and standard Ruby library extensions that are used in the Rails, both by the core code and by your applications.
+Active Supportは、Rubyの標準ライブラリの拡張やその他の便利なクラスの集まりです。Railsの本体からだけでなく、Railsアプリケーションからも利用可能です。
 
 h4. REST
 
