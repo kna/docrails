@@ -99,18 +99,18 @@ Active Supportは、Rubyの標準ライブラリの拡張やその他の便利�
 
 h4. REST
 
-The foundation of the RESTful architecture is generally considered to be Roy Fielding's doctoral thesis, "Architectural Styles and the Design of Network-based Software Architectures":http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm. Fortunately, you need not read this entire document to understand how REST works in Rails. REST, an acronym for Representational State Transfer, boils down to two main principles for our purposes:
+RESTアーキテクチャーの基礎はRoy Fieldingの博士論文、"Architectural Styles and the Design of Network-based Software Architectures":http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm にあると一般に考えられます。幸いなことに、この論文にすべて目を通さなくとも、Railsの中でRESTがどのような役割を果たしているかを知ることは可能です。RESTはRepresentational State Transfer(抽象的状態遷移)の頭文字なのですが、Railsに関係するところでまとめると以下の二つの原則になります:
 
-* Using resource identifiers (which, for the purposes of discussion, you can think of as URLs) to represent resources
-* Transferring representations of the state of that resource between system components.
+* リソースの表現に識別子(議論上はURLのようなものと考えてください)を用いる
+* リソースの状態をなんらかの形で表現し、それをシステム間でやり取りする
 
-For example, to a Rails application a request such as this:
+例を挙げましょう。Railsアプリケーションに次のようなリクエストがされたとします:
 
 <tt>DELETE /photos/17</tt>
 
-would be understood to refer to a photo resource with the ID of 17, and to indicate a desired action - deleting that resource. REST is a natural style for the architecture of web applications, and Rails makes it even more natural by using conventions to shield you from some of the RESTful complexities and browser quirks.
+これは、IDが17のphotoリソースに対して削除(delete)を指示していると解釈されます。RESTはWebアプリケーションにおいて理にかなったスタイルといえるでしょう。Railsでは規約に従うことでRESTの複雑さやブラウザの癖で頭を悩ませずとも実装がおこなえるようになっています。
 
-If you'd like more details on REST as an architectural style, these resources are more approachable than Fielding's thesis:
+アーキテクチャーとしてのRESTについて詳しく知りたい場合、Fieldingの論文よりも以下のサイトが読みやすいでしょう:
 
 * "A Brief Introduction to REST":http://www.infoq.com/articles/rest-introduction by Stefan Tilkov
 * "An Introduction to REST":http://bitworking.org/news/373/An-Introduction-to-REST (video tutorial) by Joe Gregorio
