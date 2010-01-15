@@ -121,20 +121,20 @@ h3. Railsプロジェクトの新規作成
 
 このガイドでは、<tt>blog</tt>という(とても)シンプルなブログシステムを作成しながら学習を進めていきます。それでは、アプリケーションを作成する前にRailsのインストールから始めましょう。
 
-h4. Installing Rails
+h4. Railsのインストール
 
-In most cases, the easiest way to install Rails is to take advantage of RubyGems:
+多くの場合、Railsの一番簡単なインストール方法はRubyGemsを使うものです:
 
 <shell>
 $ gem install rails
 </shell>
 
-NOTE. There are some special circumstances in which you might want to use an alternate installation strategy:
+NOTE. 必要に応じて、別の方法でインストールを行うこともできます:
 
-* If you're working on Windows, you may find it easier to install Instant Rails. Be aware, though, that "Instant Rails":http://instantrails.rubyforge.org/wiki/wiki.pl releases tend to lag seriously behind the actual Rails version. Also, you will find that Rails development on Windows is overall less pleasant than on other operating systems. If at all possible, we suggest that you install a Linux virtual machine and use that for Rails development, instead of using Windows.
-* If you want to keep up with cutting-edge changes to Rails, you'll want to clone the "Rails source code":http://github.com/rails/rails/tree/master from github. This is not recommended as an option for beginners, though.
+* Windowsで開発を行う場合、Instant Railsを使ってインストールするとより簡単です。ただし、"Instant Rails":http://instantrails.ruby.forge.org/wiki/wiki.pl で公開されているRailsは、実際のバージョンよりかなり古いことが多いので注意して下さい。また、Railsで開発を行う際、概して他のオペレーションシステムよりもつまづく点が多いと思います。もし可能なら、Windowsを使うのではなく、Linuxの仮想マシンをインストールし、その上でRailsの開発を行うことをおすすめします。
+* Railsの最新の変更を追いかけたい場合は、githubから"Rails source code":http://github.com/rails/rails/tree/master をcloneすることになります。ただし、これは初心者にはおすすめしません。
 
-WARNING. As of mid-2009, cloning the master branch will get you preliminary Rails 3.0 code. To follow along with this guide, you should clone the 2-3-stable branch instead.
+WARNING. 2009年半ばから、masterブランチをcloneすると開発中のRails 3.0が取得されます。このガイドの以下の記述はRails2.3を前提としていますので、このガイドに従うには2-3-stableブランチをcloneして下さい。
 
 h4. Creating the Blog Application
 
