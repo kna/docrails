@@ -117,9 +117,9 @@ RESTアーキテクチャーの基礎はRoy Fieldingの博士論文、"Architect
 * "Representational State Transfer":http://en.wikipedia.org/wiki/Representational_State_Transfer article in Wikipedia
 * "How to GET a Cup of Coffee":http://www.infoq.com/articles/webber-rest-workflow by Jim Webber, Savas Parastatidis & Ian Robinson
 
-h3. Creating a New Rails Project
+h3. Railsプロジェクトの新規作成
 
-If you follow this guide, you'll create a Rails project called <tt>blog</tt>, a (very) simple weblog. Before you can start building the application, you need to make sure that you have Rails itself installed.
+このガイドでは、<tt>blog</tt>という(とても)シンプルなブログシステムを作成しながら学習を進めていきます。それでは、アプリケーションを作成する前にRailsのインストールから始めましょう。
 
 h4. Installing Rails
 
