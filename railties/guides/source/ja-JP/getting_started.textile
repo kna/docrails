@@ -136,50 +136,50 @@ NOTE. 必要に応じて、別の方法でインストールを行うことも�
 
 WARNING. 2009年半ばから、masterブランチをcloneすると開発中のRails 3.0が取得されます。このガイドの以下の記述はRails2.3を前提としていますので、このガイドに従うには2-3-stableブランチをcloneして下さい。
 
-h4. Creating the Blog Application
+h4. ブログアプリケーションの作成
 
-Open a terminal, navigate to a folder where you have rights to create files, and type:
+ターミナルを開き、ファイルの作成権限のあるディレクトリに移動し、次のコマンドを入力して下さい:
 
 <shell>
 $ rails blog
 </shell>
 
-This will create a Rails application that uses a SQLite database for data storage. If you prefer to use MySQL, run this command instead:
+これで、データベースにSQLiteを使用するRailsアプリケーションが作成されました。もしMySQLを使用したい場合は以下のコマンドを実行してください:
 
 <shell>
 $ rails blog -d mysql
 </shell>
 
-And if you're using PostgreSQL for data storage, run this command:
+また、PostgreSQLを使用したい場合は以下のコマンドです:
 
 <shell>
 $ rails blog -d postgresql
 </shell>
 
-TIP: You can see all of the switches that the Rails application builder accepts by running <tt>rails -h</tt>.
+TIP: Railsの作成プログラムに指定できるオプションはこれ以外にもあります。すべてのオプションを確認するには <tt>rails -h</tt> を実行して下さい。
 
-After you create the blog application, switch to its folder to continue work directly in that application:
+ブログアプリケーションを作成したあとは、アプリケーションのフォルダに移動してすぐ作業を行います:
 
 <shell>
 $ cd blog
 </shell>
 
-In any case, Rails will create a folder in your working directory called <tt>blog</tt>. Open up that folder and explore its contents. Most of the work in this tutorial will happen in the <tt>app/</tt> folder, but here's a basic rundown on the function of each folder that Rails creates in a new application by default:
+何はともあれ、Railsによってカレントディレクトリの中に<tt>blog</tt>というフォルダが作成されたことでしょう。このフォルダを開いて中のファイルを見てみましょう。今回のチュートリアルではほとんどの作業をこのフォルダ内で行います。まず、Railsがデフォルトで作成する各フォルダの機能をざっと確認してみましょう。:
 
-|_.File/Folder|_.Purpose|
-|README|This is a brief instruction manual for your application. Use it to tell others what your application does, how to set it up, and so on.|
-|Rakefile|This file contains batch jobs that can be run from the terminal.|
-|app/|Contains the controllers, models, and views for your application. You'll focus on this folder for the remainder of this guide.|
-|config/|Configure your application's runtime rules, routes, database, and more.|
-|db/|Shows your current database schema, as well as the database migrations. You'll learn about migrations shortly.|
-|doc/|In-depth documentation for your application.|
-|lib/|Extended modules for your application (not covered in this guide).|
-|log/|Application log files.|
-|public/|The only folder seen to the world as-is.  This is where your images, javascript, stylesheets (CSS), and other static files go.|
-|script/|Scripts provided by Rails to do recurring tasks, such as benchmarking, plugin installation, and starting the console or the web server.|
-|test/|Unit tests, fixtures, and other test apparatus. These are covered in "Testing Rails Applications":testing.html|
-|tmp/|Temporary files|
-|vendor/|A place for third-party code. In a typical Rails application, this includes Ruby Gems, the Rails source code (if you install it into your project) and plugins containing additional prepackaged functionality.|
+|_.ファイル/フォルダ|_.用途|
+|README|あなたのアプリケーションの簡単な説明書です。他の人に対して、このアプリケーションの用途や、設定の仕方などを説明するのに使用します。|
+|Rakefile|ターミナルから実行可能なバッチ処理が書かれています。|
+|app/|アプリケーションのコントローラー、モデル、ビューが入っています。今回のガイドの残りの作業はほとんどこの中で行います。|
+|config/|実行時のルールや、ルーティング、データベースなどを設定します。|
+|db/|現在のデータベーススキーマや、データベースのマイグレーションが記述されています。マイグレーションについてはこのガイドでも少し学習します。|
+|doc/|あなたのアプリケーションに関する詳細なドキュメントです。|
+|lib/|アプリケーションで使用する、拡張モジュールです(このガイドでは扱いません)。|
+|log/|アプリケーションのログファイルです。|
+|public/|他のフォルダと違い、このフォルダは外部からそのまま閲覧されます。画像やjavascript、スタイルシート(CSS)、その他の静的なファイルはここに置いてください。|
+|script/|Railsが提供する、よく行うタスクを実行するためのスクリプトです。ベンチマークや、プラグインのインストール、コンソールやWebサーバの起動などが含まれます。|
+|test/|単体テストやフィクスチャなどのテスト用のツール群です。これらは "Testing Rails Applications":testing.html で説明されています。|
+|tmp/|一時ファイルです。|
+|vendor/|サードバーティーのコード用の場所です。一般的なRailsアプリケーションでは、ここにRuby Gems、Railsのソースコード(アプリケーションにインストールした場合)、追加機能を提供するプラグインなどが含まれます。|
 
 h4. Configuring a Database
 
