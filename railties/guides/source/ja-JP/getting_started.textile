@@ -181,14 +181,13 @@ $ cd blog
 |tmp/|一時ファイルです。|
 |vendor/|サードバーティーのコード用の場所です。一般的なRailsアプリケーションでは、ここにRuby Gems、Railsのソースコード(アプリケーションにインストールした場合)、追加機能を提供するプラグインなどが含まれます。|
 
-h4. Configuring a Database
+h4. データベースの設定
 
-Just about every Rails application will interact with a database. The database to use is specified in a configuration file, +config/database.yml+.
-If you open this file in a new Rails application, you'll see a default database configuration using SQLite. The file contains sections for three different environments in which Rails can run by default:
+Railsアプリケーションのほぼすべてはデータベースとやり取りを行います。使用するデータベースは設定ファイル +config/database.yml+ で指定します。新規に作成したRailsアプリケーションでは、SQLiteがデフォルトのデータベースです。デフォルトの設定ファイルにはRailsの異なる動作環境が3種類記述されています:
 
-* The +development+ environment is used on your development computer as you interact manually with the application
-* The +test+ environment is used to run automated tests
-* The +production+ environment is used when you deploy your application for the world to use.
+* +development+ 環境は開発用コンピュータで使用されます。これにより、アプリケーションと手動で対話的な処理が行えるようになります。
+* +test+ 環境は自動テストの実行に使用されます。
+* +production+ 環境は、アプリケーションを実際の利用環境に配置したときに使用されます。
 
 h5. Configuring a SQLite Database
 
