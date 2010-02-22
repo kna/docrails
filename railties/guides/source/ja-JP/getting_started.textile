@@ -226,9 +226,9 @@ socket: /tmp/mysql.sock
 
 開発用コンピュータにインストールされているMySQLでユーザrootがパスワードなしで存在する場合、この設定で動作します。ただし +development+ 環境のユーザ名とパスワードを変更することが推奨されます。
 
-h5. Configuring a PostgreSQL Database
+h5. PostgreSQL データベースを設定する
 
-If you choose to use PostgreSQL, your +config/database.yml+ will be customized to use PostgreSQL databases:
+PostgreSQLの利用を選択した場合、 +config/database.yml+ はPostgreSQLデーベース用にカスタマイズされます:
 
 <yaml>
 development:
@@ -240,7 +240,7 @@ username: blog
 password:
 </yaml>
 
-Change the username and password in the +development+ section as appropriate.
++development+ の項目のユーザ名とパスワードを変更することが推奨されます。
 
 h4. Creating the Database
 
