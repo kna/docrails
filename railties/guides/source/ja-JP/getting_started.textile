@@ -242,15 +242,15 @@ password:
 
 +development+ の項目のユーザ名とパスワードを変更することが推奨されます。
 
-h4. Creating the Database
+h4. データベースの作成
 
-Now that you have your database configured, it's time to have Rails create an empty database for you. You can do this by running a rake command:
+これでデータベースの設定は完了しました。Railsで、あなた用の空のデータベースを作成しましょう。以下の rake コマンドを実行してください:
 
 <shell>
 $ rake db:create
 </shell>
 
-NOTE. Rake is a general-purpose command-runner that Rails uses for many things. You can see the list of available rake commands in your application by running +rake -T+.
+NOTE. Rake は汎用的なコマンド実行ツールです。Rails でも様々な場面で利用しています。アプリケーションの中で実行可能な rake コマンドの一覧を確認するには +rake -T+ を実行してください。
 
 h3. Hello, Rails!
 
