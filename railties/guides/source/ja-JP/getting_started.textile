@@ -189,11 +189,11 @@ Railsアプリケーションのほぼすべてはデータベースとやり取
 * +test+ 環境は自動テストの実行に使用されます。
 * +production+ 環境は、アプリケーションを実際の利用環境に配置したときに使用されます。
 
-h5. Configuring a SQLite Database
+h5. SQLite データベースを設定する
 
-Rails comes with built-in support for "SQLite":http://www.sqlite.org, which is a lightweight serverless database application. While a busy production environment may overload SQLite, it works well for development and testing. Rails defaults to using a SQLite database when creating a new project, but you can always change it later.
+Rails は組み込みで "SQLite":http://www.sqlite.org をサポートしています。SQLiteはサーバを使用しない、軽量なデータベースアプリケーションです。 実際の運用環境では負荷が強すぎるかもしれませんが、開発やテストには十分利用できます。新しくプロジェクトを作ると、Rails はデフォルトで SQLite をデータベースとして設定しますが、後でいつでも変更することも可能です。
 
-Here's the section of the default configuration file with connection information for the development environment:
+以下はデフォルトの設定ファイルの中の、development 環境での接続情報です:
 
 <yaml>
 development:
@@ -203,7 +203,7 @@ pool: 5
 timeout: 5000
 </yaml>
 
-If you don't have any database set up, SQLite is the easiest to get installed. If you're on OS X 10.5 or greater on a Mac, you already have it. Otherwise, you can install it using RubyGems:
+データベースを一つも準備していない場合、最もインストールが容易なのはSQLiteです。Mac OS X 10.5 以上であれば既にインストールされています。それ以外の場合は、RubyGemsを使ってインストールできます:
 
 <shell>
 $ gem install sqlite3-ruby
